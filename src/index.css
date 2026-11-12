@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="daylight"] {
+  --bg-canvas: #f4f7fb;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f8fafc;
+  --bg-subtle-tint: #eff6ff;
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-primary: #0284c7;
+  --accent-soft: #e0f2fe;
+  --accent-text: #0369a1;
+  --badge-nom-bg: #ecfdf5;
+  --badge-nom-text: #047857;
+  --badge-nom-border: #a7f3d0;
+  --badge-watch-bg: #fffbeb;
+  --badge-watch-text: #b45309;
+  --badge-watch-border: #fde68a;
+  --badge-crit-bg: #fff1f2;
+  --badge-crit-text: #be123c;
+  --badge-crit-border: #fecdd3;
+  --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --dot-color: rgba(148, 163, 184, 0.28);
+}
+
+[data-theme="dark"] {
+  --bg-canvas: #0b0f1a;
+  --bg-surface: rgba(17, 24, 39, 0.85);
+  --bg-elevated: rgba(30, 41, 59, 0.78);
+  --bg-subtle-tint: rgba(14, 165, 233, 0.12);
+  --border-subtle: rgba(148, 163, 184, 0.18);
+  --border-strong: rgba(148, 163, 184, 0.32);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-primary: #22d3ee;
+  --accent-soft: rgba(34, 211, 238, 0.16);
+  --accent-text: #67e8f9;
+  --badge-nom-bg: rgba(16, 185, 129, 0.15);
+  --badge-nom-text: #6ee7b7;
+  --badge-nom-border: rgba(52, 211, 153, 0.35);
+  --badge-watch-bg: rgba(245, 158, 11, 0.15);
+  --badge-watch-text: #fcd34d;
+  --badge-watch-border: rgba(251, 191, 36, 0.35);
+  --badge-crit-bg: rgba(244, 63, 94, 0.16);
+  --badge-crit-text: #fda4af;
+  --badge-crit-border: rgba(251, 113, 133, 0.4);
+  --card-shadow: 0 8px 24px rgba(2, 6, 23, 0.45);
+  --dot-color: rgba(148, 163, 184, 0.14);
+}
+
+[data-theme="redshift"] {
+  --bg-canvas: #0d0202;
+  --bg-surface: rgba(28, 6, 6, 0.92);
+  --bg-elevated: rgba(45, 10, 10, 0.88);
+  --bg-subtle-tint: rgba(239, 68, 68, 0.14);
+  --border-subtle: rgba(248, 113, 113, 0.25);
+  --border-strong: rgba(248, 113, 113, 0.45);
+  --text-primary: #fecaca;
+  --text-secondary: #f87171;
+  --accent-primary: #ef4444;
+  --accent-soft: rgba(239, 68, 68, 0.2);
+  --accent-text: #fca5a5;
+  --badge-nom-bg: rgba(239, 68, 68, 0.15);
+  --badge-nom-text: #fca5a5;
+  --badge-nom-border: rgba(248, 113, 113, 0.35);
+  --badge-watch-bg: rgba(251, 146, 60, 0.18);
+  --badge-watch-text: #fdba74;
+  --badge-watch-border: rgba(251, 146, 60, 0.4);
+  --badge-crit-bg: rgba(220, 38, 38, 0.28);
+  --badge-crit-text: #fee2e2;
+  --badge-crit-border: rgba(252, 165, 165, 0.5);
+  --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  --dot-color: rgba(248, 113, 113, 0.12);
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  margin: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.font-mono-telemetry {
+  font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.app-canvas {
+  background-color: var(--bg-canvas);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.app-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(12px);
+}
+
+.elevated-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+}
+
+.accent-pill {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  border: 1px solid var(--border-strong);
+}
+
+.badge-nominal {
+  background: var(--badge-nom-bg);
+  color: var(--badge-nom-text);
+  border: 1px solid var(--badge-nom-border);
+}
+
+.badge-watch {
+  background: var(--badge-watch-bg);
+  color: var(--badge-watch-text);
+  border: 1px solid var(--badge-watch-border);
+}
+
+.badge-critical {
+  background: var(--badge-crit-bg);
+  color: var(--badge-crit-text);
+  border: 1px solid var(--badge-crit-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
